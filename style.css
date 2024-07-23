@@ -1,0 +1,86 @@
+:root{
+    --background-color:#E9FF97;
+    --color:#640D6B;
+    --white:#fff;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    background-color: var(--background-color);
+    color:var(--color);
+}
+header{
+    font-size:30px;
+    text-align: center;
+    margin:30px;
+}
+label{
+    width:200px;
+    /* background:#fff; */
+    display:inline-block;
+    margin:10px;
+}
+form{
+    margin-left:20px;
+margin-top:50px;
+border:1px solid rgb(68, 54, 151);
+display: flex;
+flex-direction: column;
+width:80%;
+}
+
+.rad{
+   display: flex;
+   justify-content: flex-start;
+   margin:20px;
+   gap:20px;
+}
+input[type="radio"]{
+    padding-right:10px;
+}
+input[type="text"]{
+    margin-left:10px;
+    font-size:18px;
+    border:none;
+    outline: none;
+    width:80%
+    /* padding:5px; */
+}
+input[type="text"]:focus{
+    background-color:var(--color);
+    color:var(--white);
+}
+
+.menu{
+    position: fixed;
+    bottom:0;
+    width:100%;
+    background-color: #640D6B;
+    color:#fff;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    /* height:50px; */
+}
+i,.no {
+color:#fff;
+font-size:20px;
+}
+
+.cash{
+    display: flex;
+    flex-direction: column;
+}
+.toatal{
+    font-weight: bold;
+}
+.players,.cash,.list{
+    margin:20px;
+}
+#list{
+  margin-top:
+}
