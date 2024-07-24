@@ -15,9 +15,10 @@ body{
     
 }
 header{
-    font-size:30px;
+    font-size:25px;
     text-align: center;
     margin:30px;
+    font-weight: bold;
 }
 label{
     width:200px;
@@ -26,7 +27,7 @@ label{
     margin:10px;
 }
 form{
-    margin-left:20px;
+    margin-left:34px;
 margin-top:50px;
 padding:20px;
 border:1px solid rgb(68, 54, 151);
