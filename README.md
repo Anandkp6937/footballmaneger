@@ -3,3 +3,5 @@
 <P>Helpful in situvation where one man manage money while other share from offline and upi</P>
 <P>Situvation wher trackingof money is nedded when more people share</P>
 
+<p>Situvation like Turf games,hotel bills etc</P>
+<p>where we share each other</p>
