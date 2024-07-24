@@ -27,9 +27,9 @@
                 
                 <div class="rad">
                     <p>UPI</p>
-                    <input type="radio" name="mode" id="moded">
+                    <input type="radio" value="upi" name="rd1" id="moded" class="radi"  checked>
                     <p>OFFLINE</p>
-                    <input type="radio" name="mode" id="moded">
+                    <input type="radio" value="offline" name="rd1" id="moded" class="radi">
                 </div>
                
             </div>
@@ -57,18 +57,42 @@
         <!-- div 1 player finished -->
 
            <!-- div 1 list -->
-        <div class="list">
-           <a href="#list"><i class="fa-solid fa-list"></i></a> 
-        </div>
+         <i class="fa-solid fa-list showModal" id="showList"></i>
            <!-- div 1 list finished -->
 
               <!-- div 1 add -->
         <div class="add">
-            <a href="#add"><i class="fa-solid fa-plus"></i></a> 
+          <i class="fa-solid fa-plus showModal" id="update"></i>
          </div>
             <!-- div 1 add finished -->
+</div>
 
-
+<div class="modal">
+    <div class="close">X</div>
+    <div class="details">
+        <div class="scroolable">
+            <ul class="ul">
+                <!-- <li class="list">
+                    <p class="listM nameOfM">name</p>
+                    <p class="listM rupOfM">100</p>
+                    <p class="listM payOfM">UPI</p>
+                    <i class="fa-solid delI fa-trash"></i>
+                    </li>
+                    <li class="list">
+                        <p class="listM nameOfM">name</p>
+                        <p class="listM rupOfM">100</p>
+                        <p class="listM payOfM">UPI</p>
+                       <i class="fa-solid delI fa-trash"></i>
+                        </li> -->
+                                                                                                    </li>
+            </ul>
+        </div>
    
+        </div>
+        </div>
+       
+
+
+   <script src="script.js"></script>
 </body>
 </html>
