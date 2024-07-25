@@ -1,12 +1,9 @@
 const ul=document.querySelector('.ul');
-
 const playerName=document.querySelector('#pname');
 const rupees=document.querySelector('#rupi');
 const modeOfPayment=document.querySelectorAll('.radi');
 const submit=document.querySelector('#sub');
 const showList=document.querySelector('#showList');
-
-let radiovalue;
 let modal=document.querySelector('.modal');
 let playerDetails=JSON.parse(localStorage.getItem('playerData')) || [];
 let close=document.querySelector('.close');
@@ -14,16 +11,29 @@ let update=document.querySelector('#update');
 let offM=document.querySelector('.offM');
 let nPlayers=document.querySelector('.no');
 let delI=document.querySelectorAll('.delI');
+let tot=document.querySelector('.tot');
+let upiM=document.querySelector('.upiM');
 let noOfPlayers=0;
 let totalMoney=0;
 let upiMoney=0;
+let radiovalue;
 
-let tot=document.querySelector('.tot');
-let upiM=document.querySelector('.upiM');
-
+// check for service worker ,register service worker
+function checkServiceWorker(){
+    if("serviceWorker" in navigator){
+        navigator.serviceWorker.register('sworker.js')
+        .catch(err=>console.log(err))
+     }
+     else{
+         alert('no navigator in service worker of chrome')
+     }
+}
+//on dom load 
 document.addEventListener('DOMContentLoaded',()=>{
-makePlayerCard();
+    checkServiceWorker()
+    makePlayerCard();
 });
+//function to make player card
 function makePlayerCard(){
     if(playerDetails.length !=0){
         ul.innerHTML='';
@@ -49,26 +59,21 @@ function makePlayerCard(){
   
     }
     else{
-        console.log('no players added');
-        ul.innerHTML =''
-        tot.innerText=0;
-        upiM.innerText=0;
-        offM.innerText=0;
-        nPlayers.innerText=0;
+        clearAll(true);
     }
 }
-makePlayerCard();
+
+//on submit proceess
 submit.addEventListener('click',(e)=>{
     e.preventDefault();
-    getUserData();
-    clearAll();
-    makePlayerCard();
-
-   
+    getUserData();//get all user data from localstorage
+    clearAll();//clear all feilds
+    makePlayerCard();//make player card from data
 })
 
+// acessing user data and making makePlayerCard call from data recived
 function getUserData(){
-    acuireRadioData();
+    acuireRadioData(); //getting radio button data
     if(playerName.value==='' || rupees.value==='' ){
         alert('please fill feilds')
     }
@@ -85,31 +90,43 @@ function getUserData(){
     }
    
 }
+//function to accuire radio button data
 function acuireRadioData(){
     modeOfPayment.forEach((check,i)=>{
         if(check.checked){
-            radiovalue=check.value
+            radiovalue=check.value //stores the data
         }
     })
 }
-
-function clearAll(){
-playerName.value=''
-  rupees.value=''
-radiovalue=''
+//function to clear data
+function clearAll(signal){
+    if(signal===true){
+        ul.innerHTML =''
+        tot.innerText=0;
+        upiM.innerText=0;
+        offM.innerText=0;
+        nPlayers.innerText=0;
+    }
+    else{
+        playerName.value=''
+        rupees.value=''
+      radiovalue=''
+    }
 }
-
+//modal action when clicking button
 showList.addEventListener('click',()=>{
     modal.style.transform='translateX(0%)';
-
 })
+//modal action to close 
 close.addEventListener('click',()=>{
    modal.style.transform='translateX(-100%)';
 })
+//future updates 
 update.addEventListener('click',()=>{
     // console.log('feature wil be luancehd soon');
     alert('feature will be launched soon')
 })
+// to set money details in UI
 function setMoneyDetails(){
 let offlineMoney=(totalMoney)-(upiMoney);
 tot.innerText=totalMoney;
@@ -118,10 +135,9 @@ offM.innerText=offlineMoney;
 noOfPlayers=playerDetails.length;
 nPlayers.innerText=noOfPlayers;
 }
-
+//function to delete player
 function deleteIt(index){
-    console.log('deleted:',index);
-    console.log(playerDetails.splice(index,1));
+   playerDetails.splice(index,1)
     localStorage.setItem('playerData',JSON.stringify(playerDetails));
     makePlayerCard();
 }

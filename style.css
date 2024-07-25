@@ -10,9 +10,9 @@
     font-family: "Poppins", sans-serif;
 }
 body{
-    background-color: var(--background-color);
+    background: var(--background-color);
     color:var(--color);
-    
+cursor: pointer;    
 }
 header{
     font-size:40px;
@@ -23,7 +23,6 @@ header{
 }
 label{
     width:200px;
-    /* background:#fff; */
     display:inline-block;
     margin:10px;
 }
@@ -55,8 +54,6 @@ input[type="text"]{
     border:none;
     outline: none;
     width:80%;
-
-    /* padding:5px; */
 }
 input[type="text"]:focus{
     background-color:var(--color);
@@ -70,10 +67,10 @@ input[type="text"]:focus{
     background-color: #640D6B;
     color:#fff;
     display: flex;
-    justify-content:space-around;
+    justify-content:space-between;
     align-items: center;
-    /* height:50px; */
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    padding:10px;
 }
 i,.no {
 color:#fff;
@@ -166,4 +163,7 @@ transform: scale(0.97);
 .payOfM{
     color:#E9FF97;
 
+}
+#update{
+    margin-right:10px;
 }
