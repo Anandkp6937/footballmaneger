@@ -1,3 +1,4 @@
+/* here i used fixed px in measurement  you can use rem or em to make even more dynamic */
 :root{
     --background-color:#E9FF97;
     --color:#640D6B;
@@ -17,14 +18,29 @@ cursor: pointer;
 header{
     font-size:40px;
     text-align: center;
-    margin:30px;
     font-weight: bold;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
 }
 label{
     width:200px;
     display:inline-block;
     margin:10px;
+}
+.head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:20px;
+    margin-top:50px;
+}
+.head i{
+    font-size:40px;
+    color:var(--color)
+}
+.center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 form{
 position: absolute;
@@ -54,6 +70,7 @@ input[type="text"]{
     border:none;
     outline: none;
     width:80%;
+    padding:3px;
 }
 input[type="text"]:focus{
     background-color:var(--color);
@@ -97,16 +114,16 @@ font-size:20px;
     top:0%;
     left:0%;
     width: 100%;
-height:100vh;
-background: var(--color);
-opacity:0.9;
-display: flex;
-flex-direction: column;
-border:1px solid #fff;
-overflow:hidden;
-transition:0.2s ease-in;
-transform:translateX(-100%);
-overflow: hidden;
+    height:100vh;
+    background: var(--color);
+    opacity:0.9;
+    display: flex;
+    flex-direction: column;
+    border:1px solid #fff;
+    overflow:hidden;
+    transition:0.2s ease-in;
+    transform:translateX(-100%);
+    overflow: hidden;
 }
 .close{
     align-self:flex-end;
@@ -150,12 +167,14 @@ overflow: hidden;
     color:var(--color);
     border-radius:5px;
     transition:0.2s;
+    margin-right:20px;
 }
 .showModal:active{
 transform: scale(0.97);
 }
 #sub{
     transition: 0.2s;
+
 }
 #sub:active{
     transform: scale(0.97);
@@ -166,4 +185,17 @@ transform: scale(0.97);
 }
 #update{
     margin-right:10px;
+}
+@media screen and (min-width:1024px) {
+    #sub{
+        width:20%;
+    
+    }
+    input[type="text"]{
+        width:40%;
+     
+    }
+    label{
+        width:80px;
+    }
 }

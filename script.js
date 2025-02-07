@@ -6,6 +6,7 @@ const submit=document.querySelector('#sub');
 const showList=document.querySelector('#showList');
 let modal=document.querySelector('.modal');
 let playerDetails=JSON.parse(localStorage.getItem('playerData')) || [];
+// local storage is used to store the data without any other database
 let close=document.querySelector('.close');
 let update=document.querySelector('#update');
 let offM=document.querySelector('.offM');
@@ -18,7 +19,7 @@ let totalMoney=0;
 let upiMoney=0;
 let radiovalue;
 
-// check for service worker ,register service worker
+// check for service worker ,register service worker (progressive web app part)
 function checkServiceWorker(){
     if("serviceWorker" in navigator){
         navigator.serviceWorker.register('sworker.js')
